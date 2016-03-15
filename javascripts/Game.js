@@ -46,7 +46,9 @@ var Game = function() {
 			return;
 		}
 
-
+		// Reset the old player
+		game.player.move = 0;
+		// Start the new one
 		playerTurn 	= (playerTurn + 1) % 3;
 		game.player = players[ playerTurn ];
 
