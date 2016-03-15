@@ -1,0 +1,172 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src='javascripts/third-party/jquery.js'></script>
+
+</head>
+<body>
+	
+	<h1>Walking Water</h1>
+	<hr>
+	<div class="game">
+		<h1 class='player-message' id='heat'>Heat, warm it up!</h1>
+		<div class="top">
+			<div class="mountain environment" data-type="mountain">
+				<div class="sky" data-type="sky">
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+				</div>
+				<div class="ground" data-type="ground">
+					<div class="ice" data-type="ice"></div>
+					<div class="ice" data-type="ice"></div>
+					<div class="ice" data-type="ice"></div>
+					<div class="ice" data-type="ice"></div>
+				</div>
+			</div>
+		</div>
+		<!-- end .top -->
+
+		<div class="bottom">
+			<div class="lake environment" data-type="lake">
+				<div class="sky" data-type="sky">
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+				</div>
+				<div class="ground" data-type="ground">
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+				</div>
+			</div>
+			<!-- end .lake -->
+
+			<div class="ocean environment" data-type="ocean">
+				<div class="sky" data-type="sky">
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+					<div class="gas" data-type="gas"></div>
+				</div>
+				<div class="ground" data-type="ground">
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+					<div class="liquid" data-type="liquid"></div>
+				</div>
+			</div>
+		</div>
+		<!-- end .bottom -->
+
+
+		<!-- <div class='arrow' id='mt-to-lk'>	
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100">
+			  <defs>
+			    <marker id='head' orient='auto' markerWidth='2' markerHeight='4'
+			            refX='0.1' refY='2'>
+			      <path d='M0,0 V4 L2,2 Z' fill='black' />
+			    </marker>
+			  </defs>
+			  <line x1="10" y1="0" 
+		          x2="10" y2="100" 
+		          stroke="black" 
+		          stroke-width="5"
+		          marker-end='url(#head)'
+		          />  
+			</svg>​
+		</div>
+
+
+		<div class='arrow' id='mt-to-oc'>	
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100">
+			  <defs>
+			    <marker id='head' orient='auto' markerWidth='2' markerHeight='4'
+			            refX='0.1' refY='2'>
+			      <path d='M0,0 V4 L2,2 Z' fill='black' />
+			    </marker>
+			  </defs>
+			  <line x1="10" y1="0" 
+		          x2="10" y2="100" 
+		          stroke="black" 
+		          stroke-width="5"
+		          marker-end='url(#head)'
+		          />  
+			</svg>​
+		</div>
+
+
+		<div class='arrow' id='lk-to-mt'>	
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100">
+			  <defs>
+			    <marker id='head' orient='auto' markerWidth='2' markerHeight='4'
+			            refX='0.1' refY='2'>
+			      <path d='M0,0 V4 L2,2 Z' fill='black' />
+			    </marker>
+			  </defs>
+			  <line x1="10" y1="0" 
+		          x2="10" y2="100" 
+		          stroke="black" 
+		          stroke-width="5"
+		          marker-end='url(#head)'
+		          />  
+			</svg>​
+		</div>
+
+
+		<div class='arrow' id='oc-to-mt'>	
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100">
+			  <defs>
+			    <marker id='head' orient='auto' markerWidth='2' markerHeight='4'
+			            refX='0.1' refY='2'>
+			      <path d='M0,0 V4 L2,2 Z' fill='black' />
+			    </marker>
+			  </defs>
+			  <line x1="10" y1="0" 
+		          x2="10" y2="100" 
+		          stroke="black" 
+		          stroke-width="5"
+		          marker-end='url(#head)'
+		          />  
+			</svg>​
+		</div> -->
+
+
+	</div>
+	<!-- end .game -->
+
+	<script src='javascripts/Water.js'></script>
+	<script src='javascripts/Player.js'></script>
+	<script src='javascripts/Game.js'></script>
+
+	<script>
+
+		var game = Game();
+
+		// var water = Water();
+
+		// $('.gas').click(function (evnt) {
+		// 	water.remove( evnt, this );
+		// 	evnt.stopPropagation();
+		// 	// evnt.preventDefault();
+		// });
+		// $('.sky').click(function (evnt) {
+		// 	water.add( evnt, this );
+		// });
+		// $('.ground').click(function (evnt) {
+		// 	water.add( evnt, this );
+		// });
+
+
+	</script>
+</body>
+</html>
+
