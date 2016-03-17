@@ -9,6 +9,7 @@ var Player = function( type, waterHandler ) {
 	player.type 		 = type;
 	player.typeInStorage = null;
 	player.lastNode 	 = null;
+	player.stage 		 = 1;
 	player.move 		 = 0;
 
 	if ( type === 'heat' ) {
@@ -55,6 +56,7 @@ var Player = function( type, waterHandler ) {
 			// End the turn if more than 3 moves
 			if ( player.move >= 3 ) {
 				$('.game').trigger('next');
+				player.move = 0;
 			}
 
 		};  // End player.action()
@@ -62,14 +64,18 @@ var Player = function( type, waterHandler ) {
 
 		player.highlight = function(evnt, elem) {
 
-			$('.available').removeClass('available');
 
 			if ( $(elem).hasClass('environment') || elem === undefined ) {
 				setTimeout(function(){
+					$('.available').removeClass('available');
+					$('.display').removeClass('display');
+
 					if (player.typeInStorage !== 'liquid') {
 						$('.liquid, .ice').addClass('available');
+						$('.heat.1').addClass('display');
 					} else {
 						$('.lake, .ocean').addClass('available');
+						$('.heat.2').addClass('display');
 					}
 				}, 500)
 			}
@@ -106,20 +112,25 @@ var Player = function( type, waterHandler ) {
 			// End the turn if more than 3 moves
 			if ( player.move >= 3 ) {
 				$('.game').trigger('next');
+				player.move = 0;
 			}
 
 		};  // End player.action()
 
 		player.highlight = function(evnt, elem) {
 
-			$('.available').removeClass('available');
 
 			if ( $(elem).hasClass('environment') || elem === undefined ) {
 				setTimeout(function(){
+					$('.available').removeClass('available');
+					$('.display').removeClass('display');
+
 					if ( player.lastNode === null ) {
 						$('.gas').addClass('available');
+						$('.wind.1').addClass('display');
 					} else {
 						$('.lake, .ocean, .mountain').addClass('available');
+						$('.wind.2').addClass('display');
 					}
 				}, 500)
 			}
@@ -154,6 +165,7 @@ var Player = function( type, waterHandler ) {
 			// End the turn if more than 3 moves
 			if ( player.move >= 3 ) {
 				$('.game').trigger('next');
+				player.move = 0;
 			}
 
 		}  // End player.action()
@@ -161,16 +173,18 @@ var Player = function( type, waterHandler ) {
 
 		player.highlight = function(evnt, elem) {
 
-			$('.available').removeClass('available');
-
 			if ( $(elem).hasClass('environment') || elem === undefined ) {
 				setTimeout(function(){
-
+					$('.available').removeClass('available');
+					$('.display').removeClass('display');
+console.log('removing display')
 					var $env = $(elem),
 						gas  = $env.find('.gas')[0];
 
-					if ( gas !== undefined ) {
+					if ( gas !== undefined || elem === undefined ) {
+						console.log('adding display')
 						$('.lake, .ocean, .mountain').addClass('available');
+						$('.cold.1').addClass('display');
 					}
 				}, 500)
 			}

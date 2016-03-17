@@ -11,7 +11,9 @@ html, body {
 .game {
 	margin: 0 auto;
 }
-
+.environment {
+	position: relative;
+}
 .top, .bottom {
 	display: block;
 }
@@ -74,6 +76,21 @@ html, body {
 	border-color: yellow;
 }
 
+/* TURNS */
 #game_over {
 	color: tomato;
+}
+
+.heat, .wind, .cold {
+	display: none;
+}
+
+.display {
+    position: absolute;
+    left: 0;
+    margin-left: -30px;
+}
+
+.environment:hover .display {
+	display: inline-block;
 }

@@ -45,9 +45,6 @@ var Game = function() {
 			$('.player-message').text( 'Game Over' );
 			return;
 		}
-
-		// Reset the old player
-		game.player.move = 0;
 		// Start the new one
 		playerTurn 	= (playerTurn + 1) % 3;
 		game.player = players[ playerTurn ];
@@ -62,7 +59,11 @@ var Game = function() {
 
 
 	$('.game').on('next', function nextPlayer() {
-		game.next();
+		// Temporary measure, since there's some delay in sending the end of the last click event?
+		// So confused. Multiple highlights showing. That shouldn't be able to happen
+		setTimeout(function nextWait() {
+			game.next();
+		}, 300);
 	});
 
 
