@@ -91,6 +91,9 @@ html, body {
     margin-left: -30px;
 }
 
-.environment:hover .display {
+.environment .display {
 	display: inline-block;
+}
+.environment:hover .display {
+	font-weight: bold;
 }

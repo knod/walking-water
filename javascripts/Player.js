@@ -177,12 +177,11 @@ var Player = function( type, waterHandler ) {
 				setTimeout(function(){
 					$('.available').removeClass('available');
 					$('.display').removeClass('display');
-console.log('removing display')
+
 					var $env = $(elem),
 						gas  = $env.find('.gas')[0];
 
 					if ( gas !== undefined || elem === undefined ) {
-						console.log('adding display')
 						$('.lake, .ocean, .mountain').addClass('available');
 						$('.cold.1').addClass('display');
 					}
